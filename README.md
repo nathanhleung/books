@@ -14,3 +14,4 @@ Exercises from https://doc.rust-lang.org/book/
 1. Chapter 8 – 4 January 2022
 1. Chapter 9 – 5 January 2022
 1. Chapter 10 – 7 January 2022
+1. Chapter 11 – 14 January 2022
