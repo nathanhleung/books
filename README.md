@@ -19,3 +19,4 @@ Exercises from https://doc.rust-lang.org/book/
 1. Chapter 13 – 17 January 2022
 1. Chapter 14 – 19 January 2022
 1. Chapter 15 – 28 January 2022
+1. Chapter 16 – 1 February 2022
