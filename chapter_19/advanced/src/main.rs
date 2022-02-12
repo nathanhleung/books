@@ -1,3 +1,5 @@
+use hello_macro::HelloMacro;
+use hello_macro_derive::HelloMacro;
 use std::fmt;
 use std::slice;
 
@@ -9,6 +11,7 @@ extern "C" {
     fn pow(base: f64, exponent: f64) -> f64;
 }
 
+#[derive(HelloMacro)]
 struct Human;
 
 trait Pilot {
@@ -125,6 +128,10 @@ fn main() {
         "{}",
         DisplayableVec(vec![String::from("hello"), String::from("world")])
     );
+
+    println!("do_twice(add_one, 4) = {}", do_twice(add_one, 4));
+
+    Human::hello_macro();
 }
 
 fn dangerous(a: *const i32, b: *mut i32) {
@@ -151,4 +158,12 @@ fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
             slice::from_raw_parts_mut(ptr.add(mid), len - mid),
         )
     }
+}
+
+fn add_one(x: i32) -> i32 {
+    x + 1
+}
+
+fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
+    f(f(arg))
 }
