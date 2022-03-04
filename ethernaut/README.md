@@ -11,3 +11,5 @@ Challenges from https://ethernaut.openzeppelin.com/
 1. Level 4 – [26 February 2022](https://rinkeby.etherscan.io/tx/0xf93bb7dd862d3ad7fa2e3f8fbbda2a45776217912704ac39a4d9b13e2174ef79)
 1. Level 5 – [28 February 2022](https://rinkeby.etherscan.io/tx/0xd88f4d71518a259c241f8512aca5699a2bea664ec96dc26a5bf5c232df03b3c2)
 1. Level 6 – [1 March 2022](https://rinkeby.etherscan.io/tx/0x596ee6f1190b961ed7498f249cd69579b2578c5e24dd0c18dd5a99bc2f4fb28c)
+1. Level 7 – [4 March 2022](https://rinkeby.etherscan.io/tx/0x570c79b9d856028966b4deaef9983cc30edbce5a0ca40548f8883b0c4c9682f0)
+1. Level 8 – [4 March 2022](https://rinkeby.etherscan.io/tx/0x1df5c9ce7df0e3e47d5f6cdb623acacf0159830e585429f030ba1aa969bc4692)
