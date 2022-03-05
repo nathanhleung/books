@@ -105,3 +105,94 @@ size
 ; Normal order will expand out the call to `test`, see that `(= x 0)` is `#t`,
 ; and resolve to 0
 ; (test 0 (p))
+
+; 1.1.7
+(display_chapter_heading "1.1.7")
+
+(define (sqrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x) x)))
+
+(define (improve guess x)
+  (average guess (/ x guess)))
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
+
+(define (sqrt x)
+  (sqrt-iter 1.0 x))
+
+(sqrt 9)
+(sqrt (+ 100 37))
+(sqrt (+ (sqrt 2) (sqrt 3)))
+(square (sqrt 1000))
+
+; Exercise 1.6
+(define (new-if predicate then-clause else-clause)
+  (cond (predicate then-clause)
+        (else else-clause)))
+
+(new-if (= 2 3) 0 5)
+
+(define (new-sqrt-iter guess x)
+  (new-if (good-enough? guess x)
+          guess
+          (new-sqrt-iter (improve guess x) x)))
+
+(define (new-sqrt x)
+  (new-sqrt-iter 1.0 x))
+
+; The special short-circuit processing rule for `if` doesn't apply to `new-if`,
+; so since the interpreter uses applicative-order evaluation, it will hang as it
+; recursively tries to evaluate the call to `sqrt-iter`.
+; (new-sqrt 10)
+
+; Exercise 1.7
+(sqrt (square 0.01)) ; Epsilon is too large for this to be accurate
+(sqrt (square 9))
+(sqrt (square 123456789123456789123456789)) ; This seems pretty close
+
+(define (better-sqrt x)
+  (better-sqrt-iter 1.0 x))
+
+(define (better-sqrt-iter guess x)
+  (define next-guess (improve guess x))
+  (if (better-good-enough? guess next-guess)
+      next-guess
+      (better-sqrt-iter next-guess x)))
+
+(define (better-good-enough? previous-guess guess)
+  (< (/ (abs (- guess previous-guess))
+        previous-guess)
+     ; End when change in guess is less than 0.1%
+     0.001))
+
+(better-sqrt (square 0.01))
+(better-sqrt (square 9))
+(better-sqrt (square 123456789123456789123456789))
+
+; On a percent error basis, this new function `better-sqrt` performs
+; better on small numbers and worse on large numbers (probably since
+; epsilon was so small relative to the large numbers in the previous
+; version of the function).
+
+; Exercise 1.8
+(define (cbrt-iter guess x)
+  (define next-guess (improve-cbrt guess x))
+  (if (better-good-enough? guess next-guess)
+      next-guess
+      (cbrt-iter next-guess x)))
+
+(define (improve-cbrt guess x)
+  (average guess (/ (+ (/ x (square guess)) (* 2 guess)) 3)))
+
+(define (cbrt x)
+  (cbrt-iter 1.0 x))
+
+(cbrt (cube 0.01))
+(cbrt (cube 9))
+(cbrt (cube 123456789123456789123456789))
