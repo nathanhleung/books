@@ -1,10 +1,6 @@
 #lang racket
 
-(define (display_chapter_heading chapter)
-  (display "===")
-  (display chapter)
-  (display "===")
-  (newline))
+(require "lib.rkt")
 
 ; 1.1.1
 (display_chapter_heading "1.1.1")
