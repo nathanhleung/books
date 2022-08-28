@@ -1,7 +1,7 @@
 // Based on https://monokh.com/posts/ethereum-contract-creation-bytecode
 // EXECUTION
 60 2A // PUSH1 2A - Push 42 (decimal) on the stack
-60 1F // PUSH1 0 - Push 0 on the stack (memory location to store)
+60 1F // PUSH1 1F - Push 1F on the stack (last byte of uint256)
 53 // MSTORE - Store result to memory (32 byte word size)
 
 // RETURN
