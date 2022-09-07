@@ -28,6 +28,7 @@ Challenges from https://ethernaut.openzeppelin.com/
 1. [Level 21](./src/Level21/Level21.sol) - [30 August 2022](https://rinkeby.etherscan.io/tx/0xf7e60f38438eb3fe6e0309ba0a3ea5e8e2f4d7392b0ae61269b247e7479e5522)
 1. [Level 22](./src/Level22/Level22.sol) - [1 September 2022](https://rinkeby.etherscan.io/tx/0x706b0653b6ba070985735fa7d4218b0016064726448a4a56992a3d36f73412f1)
 1. [Level 23](./src/Level23/Level23.sol) - [1 September 2022](https://rinkeby.etherscan.io/tx/0x1e80bce764bfbfdd6662bc020531efc880b467ebd9f02a888b18ec6cc7bc4bfb)
+1. [Level 24](./src/Level24/Level24.sol) - [7 September 2022](https://rinkeby.etherscan.io/tx/0x9591035eb1bbe759ae570adcdc67aef89316277be80c3a60810e7be9a61819fd)
 
 ## Directories
 
